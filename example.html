@@ -41,17 +41,11 @@
                            required/>
                 </div>
                 <div class="form-group">
-                    <label for="daterange3" class="control-label">Picker with custom locale</label>
-                    <input date-range-picker id="daterange3" class="form-control date-picker" type="text"
-                           name="date" ng-model="date" options="opts" required/>
-                </div>
-
-                <div class="form-group">
-                    <label for="daterange4" class="control-label">Picker with custom format</label>
+                    <label for="daterange3" class="control-label">Picker with custom format</label>
                     <div class="input-group col-md-6" id="daterange4">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
                         <input date-range-picker class="form-control date-picker" type="text"
-                           name="date2" ng-model="date2" options="{format: 'MMMM D, YYYY'}" required/>
+                           name="date2" ng-model="date2" options="opts" format="MM/DD/YYYY" required/>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-chevron-down"></span></span>
                     </div>
                 </div>
@@ -74,32 +68,22 @@
 exampleApp = angular.module('example', ['daterangepicker']);
 exampleApp.controller('TestCtrl', function($scope, $interval) {
     $scope.date = {
-        startDate: moment().subtract("days", 1),
-        endDate: moment()
+        startDate: moment().subtract(7, 'days'),
+        endDate: moment().add(7, 'days')
     };
     $scope.date2 = {
         startDate: moment().subtract("days", 1),
         endDate: moment()
     };
-
     $scope.opts = {
-        locale: {
-            applyClass: 'btn-green',
-            applyLabel: "Použít",
-            fromLabel: "Od",
-            toLabel: "Do",
-            cancelLabel: 'Zrušit',
-            customRangeLabel: 'Vlastní rozsah',
-            daysOfWeek: ['Ne', 'Po', 'Út', 'St', 'Čt', 'Pá', 'So'],
-            firstDay: 1,
-            monthNames: ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen', 'Červenec', 'Srpen', 'Září',
-                'Říjen', 'Listopad', 'Prosinec'
-            ]
-
-        },
+        format: 'MM/DD/YYYY',
         ranges: {
-            'Last 7 Days': [moment().subtract('days', 6), moment()],
-            'Last 30 Days': [moment().subtract('days', 29), moment()]
+            'Standard': [moment().subtract(7, 'days'), moment().add(7, 'days')],
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 days': [moment().subtract(7, 'days'), moment()],
+            'Last 30 days': [moment().subtract(30, 'days'), moment()],
+            'This month': [moment().startOf('month'), moment().endOf('month')]
         }
     };
 
