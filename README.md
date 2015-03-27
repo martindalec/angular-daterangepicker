@@ -1,16 +1,18 @@
 # Date Range Picker for Angular and Bootstrap
 ![Dependencies](https://david-dm.org/fragaria/angular-daterangepicker.png)
 
+Based on code from [Fragaria](https://github.com/fragaria/angular-daterangepicker)
+
 Angular.js directive for Dan Grossmans's [Bootstrap Datepicker](https://github.com/dangrossman/bootstrap-daterangepicker).
 
 ![Date Range Picker screenshot](http://i.imgur.com/zDjBqiS.png)
 
-## Instalation via Bower
+## Installation via Bower
 The easiest way to install the picker is:
 ```
-bower install angular-daterangepicker --save
+bower install angular-daterangepicker-plus --save
 ```
-## Manual instalation
+## Manual installation
 This directive depends on [Bootstrap Datepicker](https://github.com/dangrossman/bootstrap-daterangepicker), [Bootstrap](http://getbootstrap.com), [Moment.js](http://momentjs.com/) and [jQuery](http://jquery.com/).
 Download dependencies above and then use [minified](js/angular-daterangepicker.min.js) or [normal](angular-daterangepicker.js) version.
 
