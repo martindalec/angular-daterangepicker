@@ -53,7 +53,7 @@ Then in your HTML just add attribute `date-range-picker` to any input and bind i
 </div>
 ```
 
-See `example.html` for working demo.
+See `example.html` or [click here](https://martindalec.github.io/DatePicker/index.html) for working demo.
 
 ## Advanced usage
 Min and max value can be set via additional attributes:
