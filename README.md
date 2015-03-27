@@ -65,7 +65,20 @@ Min and max value can be set via additional attributes:
 The date picker can be later customized by passing `options` attribute.
 
 <input date-range-picker class="form-control date-picker" type="text" ng-model="date" 
-min="'2014-02-23'" max="'2015-02-25'" options="{separator: ":"}"/>
+min="'2014-02-23'" max="'2015-02-25'" options="options"/>
+
+```
+options = {
+        format: 'MM/DD/YYYY',
+        ranges: {
+            'Standard': [moment().subtract(7, 'days'), moment().add(7, 'days')],
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 days': [moment().subtract(7, 'days'), moment()],
+            'Last 30 days': [moment().subtract(30, 'days'), moment()],
+            'This month': [moment().startOf('month'), moment().endOf('month')]
+        }
+```
 
 ## Compatibility
 Version > 0.1.1 requires [Bootstrap Datepicker](https://github.com/dangrossman/bootstrap-daterangepicker) 1.3.3 and newer.
