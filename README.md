@@ -5,7 +5,7 @@ Based on code from [Fragaria](https://github.com/fragaria/angular-daterangepicke
 
 Angular.js directive for Dan Grossmans's [Bootstrap Datepicker](https://github.com/dangrossman/bootstrap-daterangepicker).
 
-![Date Range Picker screenshot](http://i.imgur.com/zDjBqiS.png)
+![Date Range Picker screenshot](https://martindalec.github.io/DatePicker/DatePickerExample.png)
 
 ## Installation via Bower
 The easiest way to install the picker is:
