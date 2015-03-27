@@ -1,5 +1,5 @@
 {
-  "name": "angular-daterangepicker",
+  "name": "angular-daterangepicker-plus",
   "version": "0.1.12",
   "homepage": "https://github.com/martindalec/angular-daterangepicker-plus",
   "main": "js/angular-daterangepicker.js",
