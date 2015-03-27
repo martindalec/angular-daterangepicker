@@ -10,7 +10,7 @@ module.exports = (grunt) ->
                 options:
                     join: true
                 files:
-                    'js/angular-daterangepicker.js': ['coffee/angular-daterangepicker.coffee']
+                    'js/angular-daterangepicker-plus.js': ['coffee/angular-daterangepicker-plus.coffee']
 
         watch:
             files: ['example.html', 'coffee/*.coffee']
@@ -21,7 +21,7 @@ module.exports = (grunt) ->
                 sourceMap: true
             target:
                 files:
-                    'js/angular-daterangepicker.min.js': ['js/angular-daterangepicker.js']
+                    'js/angular-daterangepicker-plus.min.js': ['js/angular-daterangepicker-plus.js']
         wiredep:
             target:
                 src: [
@@ -34,7 +34,7 @@ module.exports = (grunt) ->
 
             daterangepicker:
                 files:
-                    'js/angular-daterangepicker.js': ['js/angular-daterangepicker.js']
+                    'js/angular-daterangepicker-plus.js': ['js/angular-daterangepicker-plus.js']
 
 
     # Default task(s).
