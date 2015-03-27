@@ -18,9 +18,10 @@
         opts: '=options'
       },
       link: function($scope, element, attrs, modelCtrl) {
-        var el, opts, _formatted, _init, _picker, _validateMax, _validateMin;
+        var customOpts, el, opts, _formatted, _init, _picker, _validateMax, _validateMin;
         el = $(element);
-        opts = angular.extend({}, dateRangePickerConfig, attrs);
+        //customOpts = $parse(attrs.dateRangePicker)($scope, {});
+        opts = angular.extend({}, dateRangePickerConfig, $scope.opts);
         _picker = null;
         _formatted = function(viewVal) {
           var f;
