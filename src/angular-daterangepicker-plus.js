@@ -20,8 +20,8 @@
             link: function ($scope, element, attrs, modelCtrl) {
                 var customOpts, el, opts, _formatted, _init, _picker, _validateMax, _validateMin;
                 el = $(element);
-                //customOpts = $parse(attrs.dateRangePicker)($scope, {});
-                opts = angular.extend({}, dateRangePickerConfig, $scope.opts);
+                customOpts = $scope.opts;//$parse(attrs.dateRangePicker)($scope, {});
+                opts = angular.extend({}, dateRangePickerConfig, customOpts);
                 _picker = null;
                 _formatted = function (viewVal) {
                     var f;
@@ -61,7 +61,7 @@
                     }
                     return '';
                 });
-                modelCtrl.$parsers.push(function (val) {
+                modelCtrl.$parsers.unshift(function (val) {
                     if (!angular.isObject(val) || !(val.hasOwnProperty('startDate') && val.hasOwnProperty('endDate'))) {
                         return modelCtrl.$modelValue;
                     }
@@ -92,13 +92,11 @@
                 _init = function () {
                     el.daterangepicker(opts, function (start, end, label) {
                         return $timeout(function () {
-                            return $scope.$apply(function () {
-                                modelCtrl.$setViewValue({
-                                    startDate: start.toDate(),
-                                    endDate: end.toDate()
-                                });
-                                return modelCtrl.$render();
+                            modelCtrl.$setViewValue({
+                                startDate: start,
+                                endDate: end
                             });
+                            return modelCtrl.$render();
                         });
                     });
                     _picker = el.data('daterangepicker');
@@ -108,11 +106,9 @@
                 el.change(function () {
                     if ($.trim(el.val()) === '') {
                         return $timeout(function () {
-                            return $scope.$apply(function () {
-                                return modelCtrl.$setViewValue({
-                                    startDate: null,
-                                    endDate: null
-                                });
+                            return modelCtrl.$setViewValue({
+                                startDate: null,
+                                endDate: null
                             });
                         });
                     }
