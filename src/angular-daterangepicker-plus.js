@@ -40,15 +40,7 @@
                         _picker.setEndDate(m);
                     });
                 };
-
-                $scope.$watch('model.startDate', function (newValue) {
-                    setStartDate(newValue);
-                });
-
-                $scope.$watch('model.endDate', function (newValue) {
-                    setEndDate(newValue);
-                });
-
+                
                 _formatted = function (viewVal) {
                     var f;
                     f = function (date) {
