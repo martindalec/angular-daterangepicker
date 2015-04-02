@@ -1,3 +1,6 @@
+/*
+ * @license Angular-DateRangePicker-Plus v0.1.16
+ */
 (function () {
     var picker;
 
@@ -15,6 +18,7 @@
             scope: {
                 dateMin: '=min',
                 dateMax: '=max',
+                model: '=ngModel',
                 opts: '=options'
             },
             link: function ($scope, element, attrs, modelCtrl) {
@@ -40,6 +44,14 @@
                         _picker.setEndDate(m);
                     });
                 };
+
+                $scope.$watch('model.startDate', function (newValue) {
+                    setStartDate(newValue);
+                });
+
+                $scope.$watch('model.endDate', function (newValue) {
+                    setEndDate(newValue);
+                });
                 
                 _formatted = function (viewVal) {
                     var f;
