@@ -32,7 +32,8 @@
                         var m = moment(newValue);
                         if (_picker.endDate < m)
                             _picker.setEndDate(m);
-                        _picker.setStartDate(m);
+			if(newValue)
+			    _picker.setStartDate(m);
                     });
                 };
 
@@ -41,7 +42,8 @@
                         var m = moment(newValue);
                         if (_picker.startDate > m)
                             _picker.setStartDate(m);
-                        _picker.setEndDate(m);
+			if(newValue)
+                            _picker.setEndDate(m);
                     });
                 };
 
